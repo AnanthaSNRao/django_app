@@ -1,2 +1,0 @@
-db['primer-dataset'].find({$or:[{"address.street": "/*West */"}, {"address.street": "/* East */"}]})
-db['primer-dataset'].find({$or:[{"address.street": "/.*East.*/"}, {"address.street": "/.*West.*/"}]})

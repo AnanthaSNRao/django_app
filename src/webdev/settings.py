@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'landingPage'
+    'landingPage',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -49,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'webdev.urls'
@@ -82,6 +84,10 @@ DATABASES = {
     }
 }
 
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = (
+  'http://localhost:8000',
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -101,8 +107,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# MEDIA_ROOT = os.path.join(BASE_DIR,'assets')
-# MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'assets')
+MEDIA_URL = '/media/'
 # CORS_ALLOW_ALL_ORIGINS = True
 
 # Internationalization
