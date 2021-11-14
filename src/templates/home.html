@@ -6,8 +6,20 @@
     {% csrf_token %}
     <input type="file" name="file"> upload image to be compressed</input>
     <button type="submit">submit</button>
-</div>
+</form>
+<br>
+{% if error %}
+<p>{{error}}</p>
+{% elif url %}
 <div>
-    <!-- <img src="/out.png" alt="out" width="500" height="600"> -->
+    <br>
+    <p>{{cname}}</p>
+    <img src= {{url}} width="500" height="600">
 </div>
+<form method="POST" action="download">
+    {% csrf_token %}
+    <input type="text" name="text"></input>
+    <button type="submit">submit</button>
+</form>
+{% endif %}
 {% endblock %}
