@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>
+    <br>
+    <h3>Total size of un-compressed data {{size}}</h3>
+    <h3>Total size of compressed data {{csize}}</h3>
+    <br>
+    <table class="highlight">
+        <tr>
+            <th>id</th>
+            <th>type</th>
+            <th>name</th>
+            <th>width</th>
+            <th>height</th>
+            <th>depth</th>
+            <th>size in bytes</th>
+            <th>Compression Ratio</th>
+            <th>Aspect Ratio</th>
+          </tr>
+          {% for d in data %}
+          <tr>
+            {% for p,v in d.items %}
+            <td>
+                {{v}}
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

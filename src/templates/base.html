@@ -2,8 +2,45 @@
 <html>
     <head>
         <title>DSCI 551</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            #list {
+              font-family: Arial, Helvetica, sans-serif;
+              border-collapse: collapse;
+              width: 100%;
+            }
+            
+           td, th {
+              border: 1px solid #ddd;
+              padding: 8px;
+            }
+            
+            tr:nth-child(even){background-color: #f2f2f2;}
+            
+            tr:hover {background-color: #ddd;}
+            
+            th {
+              padding-top: 12px;
+              padding-bottom: 12px;
+              text-align: left;
+              background-color: #393d3c;
+              color: white;
+            }
+            h1{
+                background-color: #1f2725;
+                color: white;
+                padding-bottom: 2pt;
+                padding-left: 2pt;
+            }
+            a{
+                text-align: right;
+            }
+            </style>
     </head>
     <body>
+        <h1>Image Compression</h1>
         {% block content%}
         {% endblock %}
     </body>

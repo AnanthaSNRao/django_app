@@ -1,20 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Image Compression</h1>
+<a href="/list">Get Features</a>
+<br>
+<br>
+
 <form method="POST" action="getImage" enctype="multipart/form-data">
     {% csrf_token %}
     <input type="file" name="file"> upload image to be compressed</input>
     <button type="submit">submit</button>
 </form>
 <br>
+
 {% if error %}
 <p>{{error}}</p>
 {% elif url %}
 <div>
     <br>
-    <p>{{cname}}</p>
-    <img src= {{url}} width="500" height="600">
+    <h4>Extracted Features</h4>
+    <p>original image :     {{ image.name }} with size {{ image.size }}</p>
+    <p>compressed image:    {{ c_image.name }} with size {{ c_image.size }}</p>
+    <p>comrpession ratio {{ c_image.ratio }} </p>
+    <p>aspect ratio {{image.ar}}</p>
+    <br>
+    <img src= {{url}} width="800" height="600">
 </div>
 <form method="POST" action="download">
     {% csrf_token %}
